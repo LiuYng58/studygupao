@@ -8,5 +8,8 @@ public class FactoryMethodTest {
         ICourseFactory courseFactory = new JavaCourseFactory();
         ICourse course = courseFactory.create();
         course.record();
+
+        IAnimalFactory iAnimalFactory = new CatFactory();
+        iAnimalFactory.create().printName();
     }
 }
