@@ -1,5 +1,8 @@
 package com.study.designpatterns.singleton.register;
 
+/**
+ * 枚举单例
+ */
 public enum RegisterExample1 {
     INSTANCE;
 
