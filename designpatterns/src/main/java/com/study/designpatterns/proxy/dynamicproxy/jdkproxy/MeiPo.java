@@ -1,15 +1,13 @@
 package com.study.designpatterns.proxy.dynamicproxy.jdkproxy;
 
-import com.study.designpatterns.proxy.Person;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 public class MeiPo implements InvocationHandler {
-    private Person target;
+    private Object target;
 
-    public Object getInstance(Person person){
+    public Object getInstance(Object person){
         this.target = person;
         Class<?> clazz = target.getClass();
         return Proxy.newProxyInstance(clazz.getClassLoader(),clazz.getInterfaces(),this);

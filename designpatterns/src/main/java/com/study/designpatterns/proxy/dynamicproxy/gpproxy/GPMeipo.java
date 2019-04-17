@@ -5,9 +5,9 @@ import com.study.designpatterns.proxy.Person;
 import java.lang.reflect.Method;
 
 public class GPMeipo implements GPInvocationHandler{
-    private Person target;
+    private Object target;
 
-    public Object getInstance(Person person){
+    public Object getInstance(Object person){
         this.target = person;
         Class<?> clazz = target.getClass();
         return GPProxy.newProxyInstance(new GPClassLoader(),clazz.getInterfaces(),this);
